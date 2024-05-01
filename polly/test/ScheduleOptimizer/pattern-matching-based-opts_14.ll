@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=polly-import-jscop,polly-opt-isl,polly-codegen'  \
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,polly-opt-isl,polly-codegen'  \
 ; RUN: -polly-target-throughput-vector-fma=1 \
 ; RUN: -polly-target-latency-vector-fma=8 \
 ; RUN: -polly-target-1st-cache-level-associativity=8 \

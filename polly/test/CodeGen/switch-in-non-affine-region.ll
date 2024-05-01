@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly \
+; RUN: opt %loadNPMPolly \
 ; RUN: -S -passes=polly-codegen < %s | FileCheck %s
 ;
 ;    void f(int *A, int N) {

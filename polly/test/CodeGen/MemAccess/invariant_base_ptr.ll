@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=polly-import-jscop,polly-codegen' \
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,polly-codegen' \
 ; RUN:   -polly-invariant-load-hoisting -S \
 ; RUN:   2>&1 < %s | FileCheck %s
 

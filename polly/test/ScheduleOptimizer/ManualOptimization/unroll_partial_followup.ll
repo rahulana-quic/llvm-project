@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly '-passes=print<polly-opt-isl>' -disable-output < %s | FileCheck %s --check-prefix=OPT --match-full-lines
-; RUN: opt %loadPolly '-passes=polly-opt-isl,print<polly-ast>' -disable-output < %s | FileCheck %s --check-prefix=AST --match-full-lines
-; RUN: opt %loadPolly '-passes=scop(polly-opt-isl,polly-codegen),simplifycfg' -S < %s | FileCheck %s --check-prefix=CODEGEN
+; RUN: opt %loadNPMPolly '-passes=print<polly-opt-isl>' -disable-output < %s | FileCheck %s --check-prefix=OPT --match-full-lines
+; RUN: opt %loadNPMPolly '-passes=polly-opt-isl,print<polly-ast>' -disable-output < %s | FileCheck %s --check-prefix=AST --match-full-lines
+; RUN: opt %loadNPMPolly '-passes=scop(polly-opt-isl,polly-codegen),simplifycfg' -S < %s | FileCheck %s --check-prefix=CODEGEN
 ;
 ; Partial unroll by a factor of 4.
 ;

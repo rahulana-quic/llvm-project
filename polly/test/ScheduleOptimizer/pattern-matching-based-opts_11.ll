@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=polly-import-jscop,polly-opt-isl' \
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,polly-opt-isl' \
 ; RUN: -polly-import-jscop-postfix=transformed \
 ; RUN: -polly-pattern-matching-based-opts=true \
 ; RUN: -polly-target-throughput-vector-fma=1 \

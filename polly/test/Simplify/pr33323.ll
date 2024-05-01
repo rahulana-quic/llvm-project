@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=polly-import-jscop,print<polly-simplify>' -polly-import-jscop-postfix=transformed -disable-output < %s | FileCheck %s
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,print<polly-simplify>' -polly-import-jscop-postfix=transformed -disable-output < %s | FileCheck %s
 ;
 ; llvm.org/PR33323
 ;

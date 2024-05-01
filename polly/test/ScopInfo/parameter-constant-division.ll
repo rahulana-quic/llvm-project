@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -disable-output < %s 2>&1 | FileCheck %s
 ;

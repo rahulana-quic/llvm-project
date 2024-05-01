@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' \
 ; RUN: -polly-allow-differing-element-types -disable-output < %s 2>&1 | FileCheck %s
 ;
 ;    // Check that accessing one array with different types works.

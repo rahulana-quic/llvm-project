@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=polly-import-jscop,polly-codegen' \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=polly-import-jscop,polly-codegen' \
 ; RUN: -polly-allow-differing-element-types \
 ; RUN:   -S    < %s | FileCheck %s
 ;

@@ -1,12 +1,12 @@
-; RUN: opt %loadPolly -polly-allow-nonaffine-branches \
+; RUN: opt %loadNPMPolly -polly-allow-nonaffine-branches \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -polly-allow-nonaffine-loops=true \
 ; RUN:     '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 | FileCheck %s --check-prefix=INNERMOST
-; RUN: opt %loadPolly -polly-allow-nonaffine \
+; RUN: opt %loadNPMPolly -polly-allow-nonaffine \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -polly-allow-nonaffine-branches -polly-allow-nonaffine-loops=true \
 ; RUN:     '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 | FileCheck %s --check-prefix=ALL
-; RUN: opt %loadPolly -polly-allow-nonaffine \
+; RUN: opt %loadNPMPolly -polly-allow-nonaffine \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -polly-process-unprofitable=false \
 ; RUN:     -polly-allow-nonaffine-branches -polly-allow-nonaffine-loops=true \

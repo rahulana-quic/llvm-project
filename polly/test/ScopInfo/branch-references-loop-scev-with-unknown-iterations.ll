@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 | \
+; RUN: opt %loadNPMPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 | \
 ; RUN:     FileCheck %s -check-prefix=NONAFFINE
-; RUN: opt %loadPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output \
+; RUN: opt %loadNPMPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output \
 ; RUN:     -polly-allow-nonaffine-branches=false < %s 2>&1 | \
 ; RUN:     FileCheck %s -check-prefix=NO-NONEAFFINE
 

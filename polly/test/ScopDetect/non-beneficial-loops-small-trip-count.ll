@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-process-unprofitable=false '-passes=print<polly-detect>' -disable-output < %s 2>&1 | FileCheck %s
+; RUN: opt %loadNPMPolly -polly-process-unprofitable=false '-passes=print<polly-detect>' -disable-output < %s 2>&1 | FileCheck %s
 ;
 ; CHECK-NOT: Valid
 ;

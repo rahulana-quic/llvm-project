@@ -1,12 +1,12 @@
-; RUN: opt %loadPolly -disable-output -polly-invariant-load-hoisting \
+; RUN: opt %loadNPMPolly -disable-output -polly-invariant-load-hoisting \
 ; RUN: -polly-allow-dereference-of-all-function-parameters \
 ; RUN: '-passes=print<polly-function-scops>' < %s 2>&1 | FileCheck %s --check-prefix=SCOP
 
-; RUN: opt %loadPolly -S -polly-invariant-load-hoisting \
+; RUN: opt %loadNPMPolly -S -polly-invariant-load-hoisting \
 ; RUN: -passes=polly-codegen < %s 2>&1 | FileCheck %s --check-prefix=CODE-RTC
 
 
-; RUN: opt %loadPolly -S -polly-invariant-load-hoisting \
+; RUN: opt %loadNPMPolly -S -polly-invariant-load-hoisting \
 ; RUN: -polly-allow-dereference-of-all-function-parameters \
 ; RUN: -passes=polly-codegen < %s 2>&1 | FileCheck %s --check-prefix=CODE
 

@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output < %s 2>&1 | \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output < %s 2>&1 | \
 ; RUN:     FileCheck %s -check-prefix=NONAFFINE
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output \
 ; RUN:     -polly-allow-nonaffine-branches=false < %s 2>&1 | \
 ; RUN:     FileCheck %s -check-prefix=NO-NONEAFFINE
 

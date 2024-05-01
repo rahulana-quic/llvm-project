@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -disable-output '-passes=print<polly-function-scops>' -polly-ignore-aliasing \
+; RUN: opt %loadNPMPolly -disable-output '-passes=print<polly-function-scops>' -polly-ignore-aliasing \
 ; RUN:    < %s 2>&1 | FileCheck %s
 
 ; CHECK: Assumed Context:

@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-pattern-matching-based-opts=true \
+; RUN: opt %loadNPMPolly -polly-pattern-matching-based-opts=true \
 ; RUN: -polly-target-throughput-vector-fma=1 \
 ; RUN: -polly-target-latency-vector-fma=8 \
 ; RUN: -polly-target-1st-cache-level-associativity=8 \
@@ -8,7 +8,7 @@
 ; RUN: -polly-target-2nd-cache-level-size=262144 \
 ; RUN: -passes=polly-opt-isl -disable-output < %s
 ;
-; RUN: opt %loadPolly '-passes=print<polly-dependences>' -disable-output < %s | FileCheck %s --check-prefix=DEPENDENCES
+; RUN: opt %loadNPMPolly '-passes=print<polly-dependences>' -disable-output < %s | FileCheck %s --check-prefix=DEPENDENCES
 ;
 ;    /* C := A * B + C */
 ;    /* Elements of the matrices A, B, C have the char type. */

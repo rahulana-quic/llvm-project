@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly '-passes=print<polly-function-scops>' -disable-output \
+; RUN: opt %loadNPMPolly '-passes=print<polly-function-scops>' -disable-output \
 ; RUN: -polly-invariant-load-hoisting=true < %s 2>&1 | FileCheck %s
-; RUN: opt %loadPolly -passes=polly-codegen -S \
+; RUN: opt %loadNPMPolly -passes=polly-codegen -S \
 ; RUN: -polly-invariant-load-hoisting=true < %s 2>&1 | FileCheck %s --check-prefix=IR
 ;
 ; Verify we do not create assumptions based on the parameter p_1 which is the

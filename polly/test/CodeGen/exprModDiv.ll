@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly '-passes=polly-import-jscop,polly-codegen' \
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,polly-codegen' \
 ; RUN:     -S < %s | FileCheck %s
-; RUN: opt %loadPolly '-passes=polly-import-jscop,polly-codegen' \
+; RUN: opt %loadNPMPolly '-passes=polly-import-jscop,polly-codegen' \
 ; RUN:     -polly-import-jscop-postfix=pow2 \
 ; RUN:     -S < %s | FileCheck %s -check-prefix=POW2
 ;

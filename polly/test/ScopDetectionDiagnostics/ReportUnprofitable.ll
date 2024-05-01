@@ -1,8 +1,8 @@
-; RUN: opt %loadPolly -pass-remarks-missed="polly-detect" \
+; RUN: opt %loadNPMPolly -pass-remarks-missed="polly-detect" \
 ; RUN:     -polly-detect-track-failures '-passes=print<polly-detect>' -disable-output \
 ; RUN:     -polly-process-unprofitable=false < %s 2>&1| FileCheck %s
 
-; RUN: opt %loadPolly -pass-remarks-missed="polly-detect" \
+; RUN: opt %loadNPMPolly -pass-remarks-missed="polly-detect" \
 ; RUN:     -polly-detect-track-failures '-passes=print<polly-detect>' -disable-output \
 ; RUN:     -polly-process-unprofitable=false < %s 2>&1 -pass-remarks-output=%t.yaml
 ; RUN: cat %t.yaml | FileCheck -check-prefix=YAML %s

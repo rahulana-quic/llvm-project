@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly \
+; RUN: opt %loadNPMPolly \
 ; RUN: -polly-pattern-matching-based-opts=true \
 ; RUN: '-passes=polly-optree,polly-delicm,polly-simplify,polly-opt-isl' \
 ; RUN: -polly-tc-opt=true -debug -disable-output < %s 2>&1 \

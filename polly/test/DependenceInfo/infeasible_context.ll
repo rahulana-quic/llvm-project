@@ -1,6 +1,6 @@
-; RUN: opt %loadPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 \
+; RUN: opt %loadNPMPolly '-passes=print<polly-detect>,print<polly-function-scops>' -disable-output < %s 2>&1 \
 ; RUN:  | FileCheck %s -check-prefix=FUNC-SCOP
-; RUN: opt %loadPolly '-passes=print<polly-detect>,scop(print<polly-dependences>)' -disable-output < %s 2>&1 \
+; RUN: opt %loadNPMPolly '-passes=print<polly-detect>,scop(print<polly-dependences>)' -disable-output < %s 2>&1 \
 ; RUN:  | FileCheck %s -check-prefix=FUNC-DEPS
 ;
 ; FUNC-SCOP-NOT: Statement

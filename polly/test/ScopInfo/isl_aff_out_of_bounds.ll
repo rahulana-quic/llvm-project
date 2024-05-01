@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=print<polly-detect>' < %s 2>&1
+; RUN: opt %loadNPMPolly '-passes=print<polly-detect>' < %s 2>&1
 
 ; Used to fail with:
 ; ../../isl/isl_aff.c:591: position out of bounds

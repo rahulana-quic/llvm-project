@@ -1,11 +1,11 @@
-; RUN: opt %loadPolly -polly-pattern-matching-based-opts=true \
+; RUN: opt %loadNPMPolly -polly-pattern-matching-based-opts=true \
 ; RUN: -polly-target-throughput-vector-fma=1 \
 ; RUN: -polly-target-latency-vector-fma=8 \
 ; RUN: -polly-target-1st-cache-level-size=0 \
 ; RUN: -polly-target-vector-register-bitwidth=256 \
 ; RUN: '-passes=polly-opt-isl,print<polly-ast>' -disable-output < %s 2>&1 | FileCheck %s
 
-; RUN: opt %loadPolly -polly-pattern-matching-based-opts=true \
+; RUN: opt %loadNPMPolly -polly-pattern-matching-based-opts=true \
 ; RUN: -polly-target-throughput-vector-fma=1 \
 ; RUN: -polly-target-latency-vector-fma=8 \
 ; RUN: -polly-target-1st-cache-level-associativity=8 \

@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly '-passes=print<polly-function-scops>' -disable-output < %s 2>&1 | FileCheck %s
+; RUN: opt %loadNPMPolly '-passes=print<polly-function-scops>' -disable-output < %s 2>&1 | FileCheck %s
 ;
 ; Verify that both scalars (x and y) are properly written in the non-affine
 ; region and read afterwards.

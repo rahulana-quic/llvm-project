@@ -1,5 +1,5 @@
-; RUN: opt %loadPolly '-passes=print<polly-ast>' -disable-output < %s | FileCheck %s
-; RUN: opt %loadPolly -passes=polly-codegen -S < %s | FileCheck %s -check-prefix=CODEGEN
+; RUN: opt %loadNPMPolly '-passes=print<polly-ast>' -disable-output < %s | FileCheck %s
+; RUN: opt %loadNPMPolly -passes=polly-codegen -S < %s | FileCheck %s -check-prefix=CODEGEN
 
 ; void f(int a[], int N, float *P) {
 ;   int i;

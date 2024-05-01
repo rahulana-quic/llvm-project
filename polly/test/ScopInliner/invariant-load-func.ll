@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-detect-full-functions -polly-scop-inliner \
+; RUN: opt %loadNPMPolly -polly-detect-full-functions -polly-scop-inliner \
 ; RUN: -polly-invariant-load-hoisting '-passes=print<polly-function-scops>' -disable-output < %s | FileCheck %s
 
 ; Check that we inline a function that requires invariant load hoisting

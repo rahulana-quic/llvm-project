@@ -1,12 +1,12 @@
-; RUN: opt %loadPolly \
+; RUN: opt %loadNPMPolly \
 ; RUN:     -pass-remarks-missed="polly-detect" -polly-detect-track-failures \
 ; RUN:     -polly-allow-nonaffine-loops=false '-passes=print<polly-detect>' -disable-output \
 ; RUN:     < %s 2>&1| FileCheck %s --check-prefix=REJECTNONAFFINELOOPS
-; RUN: opt %loadPolly \
+; RUN: opt %loadNPMPolly \
 ; RUN:     -pass-remarks-missed="polly-detect" -polly-detect-track-failures \
 ; RUN:     -polly-allow-nonaffine-loops=true '-passes=print<polly-detect>' -disable-output \
 ; RUN:     < %s 2>&1| FileCheck %s --check-prefix=ALLOWNONAFFINELOOPS
-; RUN: opt %loadPolly -pass-remarks-missed="polly-detect" \
+; RUN: opt %loadNPMPolly -pass-remarks-missed="polly-detect" \
 ; RUN:     -polly-process-unprofitable=false \
 ; RUN:     -polly-detect-track-failures -polly-allow-nonaffine-loops=true \
 ; RUN:     -polly-allow-nonaffine '-passes=print<polly-detect>' -disable-output < %s 2>&1 \

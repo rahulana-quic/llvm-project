@@ -1,7 +1,7 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -polly-allow-modref-calls \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -polly-allow-modref-calls \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -disable-output < %s 2>&1 | FileCheck %s
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -polly-allow-nonaffine \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -polly-allow-nonaffine \
 ; RUN:     -polly-invariant-load-hoisting=true \
 ; RUN:     -polly-allow-modref-calls -disable-output < %s 2>&1 | FileCheck %s --check-prefix=NONAFFINE
 

@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-process-unprofitable -polly-remarks-minimal \
+; RUN: opt %loadNPMPolly -polly-process-unprofitable -polly-remarks-minimal \
 ; RUN:     '-passes=polly-opt-isl,print<polly-ast>' -polly-pattern-matching-based-opts=true \
 ; RUN:     -polly-target-throughput-vector-fma=1 \
 ; RUN:     -polly-target-latency-vector-fma=1 \

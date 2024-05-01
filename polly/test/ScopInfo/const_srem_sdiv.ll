@@ -1,4 +1,4 @@
-; RUN: opt %loadPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output \
+; RUN: opt %loadNPMPolly -polly-stmt-granularity=bb '-passes=print<polly-function-scops>' -disable-output \
 ; RUN: -polly-invariant-load-hoisting=true < %s 2>&1 | FileCheck %s
 ;
 ; See http://research.microsoft.com/pubs/151917/divmodnote-letter.pdf
