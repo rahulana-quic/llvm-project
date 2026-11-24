@@ -35,9 +35,9 @@ static cl::opt<int, true>
                      cl::Hidden, cl::location(polly::PollyNumThreads),
                      cl::init(0), cl::cat(PollyCategory));
 
-cl::opt<bool> PollyVectorizeMetadata(
+cl::opt<bool> PollyAnnotateMetadataVectorize(
     "polly-annotate-metadata-vectorize",
-    cl::desc("Append vectorize enable/disable metadata from polly"),
+    cl::desc("Append vectorization metadata to Polly-generated loops"),
     cl::init(false), cl::cat(PollyCategory));
 
 static cl::opt<OMPGeneralSchedulingType, true> XPollyScheduling(
@@ -172,7 +172,9 @@ Value *polly::createLoop(Value *LB, Value *UB, Value *Stride,
     std::optional<bool> EnableVectorizeMetadata;
     if (LoopVectDisabled)
       EnableVectorizeMetadata = false;
-    else if (PollyVectorizeMetadata && !SkipVectorizeEnableMetadata)
+    else if ((PollyAnnotateMetadataVectorize ||
+              PollyOptimizeForVectorization) &&
+             !SkipVectorizeEnableMetadata)
       EnableVectorizeMetadata = true;
     Annotator->annotateLoopLatch(B, Parallel, EnableVectorizeMetadata);
   }
@@ -234,7 +236,7 @@ ParallelLoopGenerator::storeValuesIntoStruct(SetVector<Value *> &Values) {
   for (Value *V : Values)
     Members.push_back(V->getType());
 
-  const DataLayout &DL = Builder.GetInsertBlock()->getModule()->getDataLayout();
+  const DataLayout &DL = Builder.getDataLayout();
 
   // We do not want to allocate the alloca inside any loop, thus we allocate it
   // in the entry block of the function and use annotations to denote the actual
